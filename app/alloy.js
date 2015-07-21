@@ -9,3 +9,17 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+
+Alloy.Globals.Menu = new function(){
+	
+	// Adds an item to the tab menu
+	this.AddItem = function(menu, title, icon, callback){
+		var item = menu.add({ 
+			title : title, 
+			icon : icon, 
+			showAsAction : Ti.Android.SHOW_AS_ACTION_IF_ROOM 
+		}); 
+		item.addEventListener("click", callback);
+	};
+	
+};
